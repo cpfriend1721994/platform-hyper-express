@@ -1,4 +1,4 @@
-# Platform HyperExpress: NestJS Hyper-Express Adapter
+# Platform HyperExpress: NestJS hyper-express Adapter
 
 <div align="left">
 
@@ -9,6 +9,10 @@
 [![GitHub license](https://img.shields.io/github/license/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/blob/master/LICENSE)
 
 </div>
+
+## Motivation
+HyperExpress aims to be a simple yet performant HTTP & Websocket Server. Combined with the power of uWebsockets.js, a Node.js binding of uSockets written in C++, HyperExpress allows developers to unlock higher throughput for their web applications with their existing hardware.
+Platform HyperExpress is NestJS Adapter that implement HyperExpress as HTTP Server into NestJS.
 
 ## Installation
 ```sh
