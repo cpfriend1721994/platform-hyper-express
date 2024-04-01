@@ -1,4 +1,4 @@
-# Platform HyperExpress: NestJS Hyper-Express Adapter (@nestjs/platform-hyper-express)
+# Platform HyperExpress: NestJS Hyper-Express Adapter (@nnmt/platform-hyper-express)
 
 <div align="left">
 
@@ -12,7 +12,7 @@
 
 ## Installation
 ```sh
-npm i @nestjs/platform-hyper-express
+npm i @nnmt/platform-hyper-express
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ import { NestFactory } from '@nestjs/core';
 import {
   HyperExpressAdapter,
   NestHyperExpressApplication,
-} from '@nestjs/platform-hyper-express';
+} from '@nnmt/platform-hyper-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -35,7 +35,7 @@ bootstrap();
 ```
 
 ## Encountering Problems?
-- `@nestjs/platform-hyper-express` is mostly compatible with `@nestjs/platform-express` but not **100%** therefore you may encounter some middlewares not working out of the box. In this scenario, you must either write your own polyfill or omit the middleware to continue.
+- `@nnmt/platform-hyper-express` is mostly compatible with `@nestjs/platform-express` but not **100%** therefore you may encounter some middlewares not working out of the box. In this scenario, you must either write your own polyfill or omit the middleware to continue.
 - The uWebsockets.js version header is disabled by default. You may opt-out of this behavior by setting an environment variable called `KEEP_UWS_HEADER` to a truthy value such as `1` or `true`.
 - Still having problems? Open an [`> [Issue]`](https://github.com/cpfriend1721994/platform-hyper-express/issues) with details about what led up to the problem including error traces, route information etc etc.
 

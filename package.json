@@ -1,7 +1,7 @@
 {
-  "name": "@nestjs/platform-hyper-express",
+  "name": "@nnmt/platform-hyper-express",
   "version": "0.1.0",
-  "description": "NestJS Hyper-Express Adapter (@nestjs/platform-hyper-express)",
+  "description": "NestJS Hyper-Express Adapter (@nnmt/platform-hyper-express)",
   "author": "Nguyen Nhat Minh Tu",
   "license": "MIT",
   "homepage": "https://github.com/cpfriend1721994/platform-hyper-express",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cpfriend1721994/platform-hyper-express.git",
+    "url": "git+https://github.com/cpfriend1721994/platform-hyper-express.git",
     "directory": "platform-hyper-express"
   },
   "publishConfig": {
@@ -31,5 +31,17 @@
     "@types/cors": "^2.8.17",
     "mime": "^4.0.1",
     "ts-node": "^10.9.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/cpfriend1721994/platform-hyper-express/issues"
+  },
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "nestjs",
+    "hyper-express",
+    "platform"
+  ]
 }
