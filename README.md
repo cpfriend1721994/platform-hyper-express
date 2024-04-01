@@ -1,4 +1,4 @@
-# Platform HyperExpress: NestJS Hyper-Express Adapter (@nnmt/platform-hyper-express)
+# Platform HyperExpress: NestJS Hyper-Express Adapter
 
 <div align="left">
 
