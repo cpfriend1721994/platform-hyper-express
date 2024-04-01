@@ -2,8 +2,8 @@
 
 <div align="left">
 
-[![NPM version](https://img.shields.io/npm/v/hyper-express.svg?style=flat)](https://www.npmjs.com/package/hyper-express)
-[![NPM downloads](https://img.shields.io/npm/dm/hyper-express.svg?style=flat)](https://www.npmjs.com/package/hyper-express)
+[![NPM version](https://img.shields.io/npm/v/@nnmt/platform-hyper-express.svg?style=flat)](https://www.npmjs.com/package/@nnmt/platform-hyper-express)
+[![NPM downloads](https://img.shields.io/npm/dm/@nnmt/platform-hyper-express.svg?style=flat)](https://www.npmjs.com/package/@nnmt/platform-hyper-express)
 [![GitHub issues](https://img.shields.io/github/issues/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/issues)
 [![GitHub stars](https://img.shields.io/github/stars/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/stargazers)
 [![GitHub license](https://img.shields.io/github/license/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/blob/master/LICENSE)
