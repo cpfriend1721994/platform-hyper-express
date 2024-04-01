@@ -10,11 +10,29 @@
 
 </div>
 
-## Documentation
-```
+## Installation
+```sh
 npm i @nestjs/platform-hyper-express
 ```
 
+## Usage
+```js
+import { NestFactory } from '@nestjs/core';
+import {
+  HyperExpressAdapter,
+  NestHyperExpressApplication,
+} from '@nestjs/platform-hyper-express';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create<NestHyperExpressApplication>(
+    AppModule,
+    new HyperExpressAdapter()
+  );
+  await app.listen(3000);
+}
+bootstrap();
+```
 
 ## Encountering Problems?
 - `@nestjs/platform-hyper-express` is mostly compatible with `@nestjs/platform-express` but not **100%** therefore you may encounter some middlewares not working out of the box. In this scenario, you must either write your own polyfill or omit the middleware to continue.
