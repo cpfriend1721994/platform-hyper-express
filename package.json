@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cpfriend1721994/platform-hyper-express.git",
-    "directory": "packages/platform-express"
+    "directory": "platform-hyper-express"
   },
   "publishConfig": {
     "access": "public"
