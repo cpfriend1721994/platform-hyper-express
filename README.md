@@ -22,14 +22,11 @@ npm i @nnmt/platform-hyper-express
 ## Usage
 ```js
 import { NestFactory } from '@nestjs/core';
-import {
-  HyperExpressAdapter,
-  NestHyperExpressApplication,
-} from '@nnmt/platform-hyper-express';
+import { HyperExpressAdapter } from '@nnmt/platform-hyper-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestHyperExpressApplication>(
+  const app = await NestFactory.create(
     AppModule,
     new HyperExpressAdapter()
   );

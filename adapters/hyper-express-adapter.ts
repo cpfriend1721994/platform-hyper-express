@@ -28,7 +28,7 @@ import {
   urlencoded as bodyParserUrlencoded,
 } from 'body-parser';
 import * as bodyparser from 'body-parser';
-import * as cors from 'cors';
+import cors = require('cors');
 import { Server, ServerConstructorOptions, Request, Response } from 'hyper-express';
 import LiveDirectory = require('live-directory');
 import { Duplex, pipeline } from 'stream';
@@ -60,7 +60,9 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
 
   constructor(private opts?: ServerConstructorOptions) {
     super();
-
+    if (opts) {
+      this.opts = opts;
+    }
     this.httpServer = this.instance = new Server(this.opts);
   }
 
@@ -192,7 +194,10 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
   }
 
   public useStaticAssets(path: string, options: ServeStaticOptions) {
-    return this.use(LiveDirectory(path, options));
+    if (options && options.prefix) {
+      return this.use(options.prefix, new LiveDirectory(path) );
+    }
+    return this.use(new LiveDirectory(path));
   }
 
   public setBaseViewsDir(path: string | string[]) {
@@ -228,20 +233,21 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
   }
 
   public initHttpServer(options: NestApplicationOptions) {
-    if (options.httpsOptions) {
+    if (this.opts && options && options?.httpsOptions) {
       this.opts.key_file_name = options.httpsOptions.key;
       this.opts.cert_file_name = options.httpsOptions.cert;
-      this.opts.passphrase = options.httpsOptions.passphrase;      
+      this.opts.passphrase = options.httpsOptions.passphrase;
     }
-    if (options?.forceCloseConnections) {
+    if (this.opts && options?.forceCloseConnections) {
       this.opts.auto_close = options.forceCloseConnections;
     }
     this.httpServer = new Server(this.opts);
   }
 
-  public registerParserMiddleware(prefix?: string, rawBody?: boolean) {
-    const bodyParserJsonOptions = getBodyParserOptions(rawBody);
-    const bodyParserUrlencodedOptions = getBodyParserOptions(rawBody, {
+  public registerParserMiddleware(prefix?: string, rawBody?: boolean | undefined) {
+    const rawBodyBoolean: boolean = rawBody || true;
+    const bodyParserJsonOptions = getBodyParserOptions(rawBodyBoolean);
+    const bodyParserUrlencodedOptions = getBodyParserOptions(rawBodyBoolean, {
       extended: true,
     });
 
