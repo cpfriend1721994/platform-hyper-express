@@ -56,7 +56,7 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
 > {
   private readonly routerMethodFactory = new RouterMethodFactory();
   private readonly logger = new Logger(HyperExpressAdapter.name);
-  private readonly openConnections = new Set<Duplex>();
+  // private readonly openConnections = new Set<Duplex>();
 
   constructor(private opts?: ServerConstructorOptions) {
     super();

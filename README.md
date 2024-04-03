@@ -44,7 +44,24 @@ async function bootstrap() {
 }
 bootstrap();
 ```
+Or using NestHyperExpressApplication to optimize hyper-express usage (Experimental)
+```js
+import { NestFactory } from '@nestjs/core';
+import {
+  HyperExpressAdapter,
+  NestHyperExpressApplication,
+} from '@nnmt/platform-hyper-express';
+import { AppModule } from './app.module';
 
+async function bootstrap() {
+  const app = await NestFactory.create<NestHyperExpressApplication>(
+    AppModule,
+    new HyperExpressAdapter()
+  );
+  await app.listen(3000);
+}
+bootstrap();
+```
 
 
 ## Encountering Problems?

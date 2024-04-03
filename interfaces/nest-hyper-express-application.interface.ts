@@ -1,6 +1,4 @@
 import { INestApplication, HttpServer } from '@nestjs/common';
-// import type { Server as CoreHttpServer } from 'http';
-// import type { Server as CoreHttpsServer } from 'https';
 import type { Request, Response, Server } from 'hyper-express/types/index';
 import { NestHyperExpressBodyParserOptions } from './nest-hyper-express-body-parser-options.interface';
 import { NestHyperExpressBodyParserType } from './nest-hyper-express-body-parser.interface';
@@ -14,7 +12,7 @@ import { ServeStaticOptions } from './serve-static-options.interface';
  * @publicApi
  */
 export interface NestHyperExpressApplication<
-  TServer extends Server,
+  TServer extends Server = Server,
 > extends INestApplication<TServer> {
   /**
    * Returns the underlying HTTP adapter bounded to the Express.js app.
