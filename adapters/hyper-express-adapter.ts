@@ -286,7 +286,7 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
     handler: Function,
     version: VersionValue,
     versioningOptions: VersioningOptions,
-  ): VersionedRoute {
+  ): any {
     const callNextHandler: VersionedRoute = (req, res, next) => {
       if (!next) {
         throw new InternalServerErrorException(
