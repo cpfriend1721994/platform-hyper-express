@@ -260,12 +260,12 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
       .forEach(parserKey => this.use(parserMiddleware[parserKey]));
   }
 
-  public useBodyParser<Options = NestHyperExpressBodyParserOptions>(
+  public useBodyParser<Options extends (bodyparser.OptionsJson & bodyparser.OptionsUrlencoded & bodyparser.OptionsText & bodyparser.Options) | undefined = NestHyperExpressBodyParserOptions>(
     type: NestHyperExpressBodyParserType,
     rawBody: boolean,
     options?: Omit<Options, 'verify'>,
   ): this {
-    const parserOptions = getBodyParserOptions<Options>(rawBody, options);
+    const parserOptions = getBodyParserOptions(rawBody, options);
     const parser = bodyparser[type](parserOptions);
 
     this.use(parser);
