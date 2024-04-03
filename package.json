@@ -1,6 +1,6 @@
 {
   "name": "@nnmt/platform-hyper-express",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "NestJS Hyper-Express Adapter (@nnmt/platform-hyper-express)",
   "author": "Nguyen Nhat Minh Tu",
   "license": "MIT",
@@ -18,13 +18,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@nestjs/common": "10.3.7",
-    "@nestjs/core": "10.3.7",
-    "body-parser": "1.20.2",
-    "cors": "2.8.5",
+    "@nestjs/common": "^10.3.7",
+    "@nestjs/core": "^10.3.7",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "hyper-express": "^6.15.1",
     "live-directory": "^3.0.3",
-    "tslib": "2.6.2"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
@@ -41,9 +41,11 @@
   },
   "keywords": [
     "nestjs",
+    "nodejs",
     "hyper-express",
     "platform",
     "typescript",
-    "javascript"
+    "javascript",
+    "js platform"
   ]
 }
