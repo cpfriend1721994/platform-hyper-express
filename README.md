@@ -5,19 +5,20 @@
 [![NPM version](https://img.shields.io/npm/v/@nnmt/platform-hyper-express.svg?style=flat)](https://www.npmjs.com/package/@nnmt/platform-hyper-express)
 [![NPM downloads](https://img.shields.io/npm/dm/@nnmt/platform-hyper-express.svg?style=flat)](https://www.npmjs.com/package/@nnmt/platform-hyper-express)
 [![GitHub issues](https://img.shields.io/github/issues/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/issues)
-[![GitHub stars](https://img.shields.io/github/stars/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/stargazers)
 [![GitHub license](https://img.shields.io/github/license/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/badge/established-in%202024-green)](https://github.com/cpfriend1721994/platform-hyper-express/releases)
+[![GitHub stars](https://img.shields.io/github/stars/cpfriend1721994/platform-hyper-express)](https://github.com/cpfriend1721994/platform-hyper-express/stargazers)
 
 </div>
 
 
 
 ## Motivation
-[**`platform-hyper-express`**](https://github.com/cpfriend1721994/platform-hyper-express) is [**`NestJS HTTP Adapter`**](https://docs.nestjs.com/faq/http-adapter) that implement hyper-express into NestJS.
+**`platform-hyper-express`** is [**`NestJS HTTP Adapter`**](https://docs.nestjs.com/faq/http-adapter) that implement hyper-express into NestJS.
 
 [**`hyper-express`**](https://github.com/kartikk221/hyper-express) aims to be a simple yet performant HTTP & Websocket Server.
 
-Combined with the power of [**`uWebsockets.js`**](https://github.com/uNetworking/uWebSockets.js), a Node.js binding of uSockets written in C++, hyper-express allows developers to unlock higher throughput for their web applications with their existing hardware.
+Combined with the power of [**`uWebsockets.js`**](https://github.com/uNetworking/uWebSockets.js) - a Node.js binding of uSockets written in C++, **`platform-hyper-express`** allows NestJS Developers to unlock higher throughput for their web applications with their existing hardware.
 
 
 
@@ -48,7 +49,7 @@ bootstrap();
 
 ## Encountering Problems?
 - **`@nnmt/platform-hyper-express`** is mostly compatible with **`@nestjs/platform-express`** but not **100%** therefore you may encounter some middlewares not working out of the box. In this scenario, you must either write your own polyfill or omit the middleware to continue.
-- Currently uWebsockets.js supports only Node.js LTS versions on (glibc) Linux, macOS and Windows, on [**`Tier 1 platforms`**](https://github.com/nodejs/node/blob/master/BUILDING.md#platform-list).
+- Currently uWebsockets.js supports only Node.js LTS versions on (glibc) Linux, macOS and Windows, on [**`Tier 1`**](https://github.com/nodejs/node/blob/master/BUILDING.md#platform-list) platforms.
 - The uWebsockets.js version header is disabled by default. You may opt-out of this behavior by setting an environment variable called **`KEEP_UWS_HEADER`** to a truthy value such as **`1`** or **`true`**.
 
 
