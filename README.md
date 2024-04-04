@@ -30,23 +30,23 @@ npm i @nnmt/platform-hyper-express
 
 
 ## Usage
-Use **HyperExpressAdapter** for NestJS HTTP adapter. Must require **`@nestjs/platform-express`** in dependencies.
+Use **HyperExpressAdapter** for NestJS HTTP Adapter. Must require **`@nestjs/platform-express`** in dependencies.
 ```js
+// sample/nest-sample-1/src/main.ts
 import { NestFactory } from '@nestjs/core';
 import { HyperExpressAdapter } from '@nnmt/platform-hyper-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(
-    AppModule,
-    new HyperExpressAdapter()
-  );
+  const app = await NestFactory.create(AppModule, new HyperExpressAdapter());
   await app.listen(3000);
 }
 bootstrap();
 ```
+
 Or use **`@nnmt/platform-hyper-express`** classes only to optimize hyper-express usage (Experimental).
 ```js
+// sample/nest-sample-2/src/main.ts
 import { NestFactory } from '@nestjs/core';
 import {
   HyperExpressAdapter,
@@ -57,7 +57,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestHyperExpressApplication>(
     AppModule,
-    new HyperExpressAdapter()
+    new HyperExpressAdapter(),
   );
   await app.listen(3000);
 }
@@ -65,9 +65,17 @@ bootstrap();
 ```
 
 
+
+## Sample
+- Sample project are located in **`/sample`** directory.
+- Sample project help developers to install/integrate **`platform-hyper-express`** into their NestJS projects.
+- Sample project is not included in NPM package's source.
+
+
+
 ## Encountering Problems?
 - **`@nnmt/platform-hyper-express`** is mostly compatible with **`@nestjs/platform-express`** but not **100%** therefore you may encounter some middlewares not working out of the box. In this scenario, you must either write your own polyfill or omit the middleware to continue.
-- Currently uWebsockets.js supports only Node.js LTS versions on (glibc) Linux, macOS and Windows, on [**`Tier 1`**](https://github.com/nodejs/node/blob/master/BUILDING.md#platform-list) platforms.
+- Currently uWebsockets.js supports only Node.js LTS versions 16, 18 and 20 on (glibc) Linux, macOS and Windows, on [**`Tier 1`**](https://github.com/nodejs/node/blob/master/BUILDING.md#platform-list) platforms.
 - The uWebsockets.js version header is disabled by default. You may opt-out of this behavior by setting an environment variable called **`KEEP_UWS_HEADER`** to a truthy value such as **`1`** or **`true`**.
 
 

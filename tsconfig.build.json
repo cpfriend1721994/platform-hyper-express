@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "composite": true,
     "outDir": ".",
     "rootDir": ".",
     "paths": {}
   },
-  "exclude": ["node_modules", "dist", "test/**/*", "*.spec.ts"],
+  "exclude": ["node_modules", "dist", "test/**/*", "*.spec.ts", "sample", "tests"],
   "references": []
 }

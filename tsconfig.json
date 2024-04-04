@@ -1,4 +1,5 @@
 {
+  "files": ["index.ts"],
   "compilerOptions": {
     "module": "commonjs",
     "noImplicitAny": false,
@@ -12,11 +13,13 @@
     "sourceMap": true,
     "allowJs": false,
     "outDir": "dist",
+    "declaration": true,
+    "composite": true,
     "baseUrl": ".",
     "paths": {},
   },
-  "include": ["packages/**/*", "integration/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"],
+  "include": ["src", "packages/**/*", "integration/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "sample", "tests"],
   "references": [
     {
       "path": "./tsconfig.build.json"

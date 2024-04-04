@@ -40,6 +40,7 @@ yarn-error.log
 /quick-start
 /example_dist
 /example
+sample/**/node_modules
 
 # tests
 /benchmarks/memory
@@ -51,6 +52,5 @@ build/config\.gypi
 .npmrc
 pnpm-lock.yaml
 yarn.lock
-packages-lock.json
+package-lock.json
 bun.lockb
-
