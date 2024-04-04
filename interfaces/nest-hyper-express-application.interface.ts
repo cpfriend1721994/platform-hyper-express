@@ -15,7 +15,7 @@ export interface NestHyperExpressApplication<
   TServer extends Server = Server,
 > extends INestApplication<TServer> {
   /**
-   * Returns the underlying HTTP adapter bounded to the Express.js app.
+   * Returns the underlying HTTP adapter bounded to the Hyper-express.
    *
    * @returns {HttpServer}
    */
@@ -85,7 +85,7 @@ export interface NestHyperExpressApplication<
   useStaticAssets(path: string, options?: ServeStaticOptions): this;
 
   /**
-   * Register Express body parsers on the fly. Will respect
+   * Register Hyper-express body parsers on the fly. Will respect
    * the application's `rawBody` option.
    *
    * @example

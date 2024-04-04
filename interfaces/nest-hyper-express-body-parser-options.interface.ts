@@ -1,6 +1,6 @@
 /**
  * Type alias to keep compatibility with @types/body-parser
- * @see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/dcd1673c4fa18a15ea8cd8ff8af7d563bb6dc8e6/types/body-parser/index.d.ts#L48-L66#L48-L66
+ * @see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/body-parser/index.d.ts
  * @publicApi
  */
 export interface NestHyperExpressBodyParserOptions {

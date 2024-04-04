@@ -1,7 +1,7 @@
 /**
  * Interface describing options for serving static assets.
  *
- * @see [Serving static files in Express](https://expressjs.com/en/starter/static-files.html)
+ * @see [Serving static files in Hyper-express](https://github.com/kartikk221/hyper-express/blob/master/docs/LiveDirectory.md)
  * @see [Model-View-Controller](https://docs.nestjs.com/techniques/mvc)
  *
  * @publicApi
