@@ -1,13 +1,13 @@
 {
   "name": "@nnmt/platform-hyper-express",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Hyper-express Adapter for NestJS (@nnmt/platform-hyper-express)",
   "author": "Nguyen Nhat Minh Tu",
   "license": "MIT",
   "homepage": "https://github.com/cpfriend1721994/platform-hyper-express",
   "funding": {
     "type": "opencollective",
-    "url": "https://opencollective.com/nnmt"
+    "url": "https://opencollective.com/platform-hyper-express"
   },
   "repository": {
     "type": "git",

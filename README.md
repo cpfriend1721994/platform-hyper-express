@@ -30,6 +30,7 @@ npm i @nnmt/platform-hyper-express
 
 
 ## Usage
+Use **HyperExpressAdapter** for NestJS HTTP adapter. Must require **`@nestjs/platform-express`** in dependencies.
 ```js
 import { NestFactory } from '@nestjs/core';
 import { HyperExpressAdapter } from '@nnmt/platform-hyper-express';
@@ -44,7 +45,7 @@ async function bootstrap() {
 }
 bootstrap();
 ```
-Or using NestHyperExpressApplication to optimize hyper-express usage (Experimental)
+Or use **`@nnmt/platform-hyper-express`** classes only to optimize hyper-express usage (Experimental).
 ```js
 import { NestFactory } from '@nestjs/core';
 import {
@@ -72,7 +73,7 @@ bootstrap();
 
 
 ## Still Having Problems?
-- Open an [**`Issue`**](https://github.com/cpfriend1721994/platform-hyper-express/issues) with details about what led up to the problem including error traces, route information etc etc.
+- Open an [**`Issue`**](https://github.com/cpfriend1721994/platform-hyper-express/issues) with details about what led up to the problem including error traces, route information, etc.
 
 
 
