@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "composite": true,
-    "outDir": ".",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
     "rootDir": ".",
     "paths": {}
   },

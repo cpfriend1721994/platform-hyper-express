@@ -28,10 +28,11 @@ import {
   urlencoded as bodyParserUrlencoded,
 } from 'body-parser';
 import * as bodyparser from 'body-parser';
-import cors = require('cors');
+import cors from 'cors';
 import { Server, ServerConstructorOptions, Request, Response } from 'hyper-express';
-import LiveDirectory = require('live-directory');
-import { Duplex, pipeline } from 'stream';
+import LiveDirectory from 'live-directory';
+// import { Duplex, pipeline } from 'stream';
+import { pipeline } from 'stream';
 import { NestHyperExpressBodyParserOptions } from '../interfaces/nest-hyper-express-body-parser-options.interface';
 import { NestHyperExpressBodyParserType } from '../interfaces/nest-hyper-express-body-parser.interface';
 import { ServeStaticOptions } from '../interfaces/serve-static-options.interface';
