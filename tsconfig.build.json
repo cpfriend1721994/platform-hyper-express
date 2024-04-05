@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "composite": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
