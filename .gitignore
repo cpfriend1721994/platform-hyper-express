@@ -41,6 +41,7 @@ yarn-error.log
 /example_dist
 /example
 sample/**/node_modules
+sample/**/dist
 
 # tests
 /benchmarks/memory

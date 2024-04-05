@@ -5,6 +5,7 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": ".",
+    "target": "ES2021",
     "paths": {}
   },
   "exclude": ["node_modules", "dist", "test/**/*", "*.spec.ts", "sample", "tests"],

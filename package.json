@@ -1,6 +1,6 @@
 {
   "name": "@nnmt/platform-hyper-express",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Hyper-express Adapter for NestJS (@nnmt/platform-hyper-express)",
   "author": "Nguyen Nhat Minh Tu",
   "license": "MIT",
@@ -47,7 +47,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "rm -rf dist && tsc --build tsconfig.build.json"
+    "build": "rm -rf dist && tsc --build tsconfig.json"
   },
   "keywords": [
     "nestjs",
