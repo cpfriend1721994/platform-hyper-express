@@ -31,8 +31,7 @@ import * as bodyparser from 'body-parser';
 import cors from 'cors';
 import { Server, ServerConstructorOptions, Request, Response } from 'hyper-express';
 import LiveDirectory from 'live-directory';
-// import { Duplex, pipeline } from 'stream';
-import { pipeline } from 'stream';
+import { Duplex, pipeline } from 'stream';
 import { NestHyperExpressBodyParserOptions } from '../interfaces/nest-hyper-express-body-parser-options.interface';
 import { NestHyperExpressBodyParserType } from '../interfaces/nest-hyper-express-body-parser.interface';
 import { ServeStaticOptions } from '../interfaces/serve-static-options.interface';
@@ -57,14 +56,22 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
 > {
   private readonly routerMethodFactory = new RouterMethodFactory();
   private readonly logger = new Logger(HyperExpressAdapter.name);
-  // private readonly openConnections = new Set<Duplex>();
+  private readonly openConnections = new Set<Duplex>();
 
   constructor(private opts?: ServerConstructorOptions) {
-    super();
+    super(new Server())
     if (opts) {
       this.opts = opts;
+      this.httpServer = this.instance = new Server(this.opts);
     }
-    this.httpServer = this.instance = new Server(this.opts);
+  }
+
+  port: number;
+  once() {}
+  removeListener() { }
+  
+  address() {
+    return `0.0.0.0:${this.port}`;
   }
 
   public reply(response: any, body: any, statusCode?: number) {
@@ -170,12 +177,17 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
       fn && fn(port);
     });
   }
+  // public listen(port: any, ...args: any[]): any {
+  //   return this.httpServer.listen(Number(port), ...args);
+  // }
 
   public close() {
-    if (!this.httpServer) {
+    this.closeOpenConnections();
+
+    if (!this.instance) {
       return undefined;
     }
-    this.closeOpenConnections();
+    return new Promise(resolve => this.instance.close(resolve));
   }
 
   public set(...args: any[]) {
@@ -239,8 +251,8 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
       this.opts.cert_file_name = options.httpsOptions.cert;
       this.opts.passphrase = options.httpsOptions.passphrase;
     }
-    if (this.opts && options?.forceCloseConnections) {
-      this.opts.auto_close = options.forceCloseConnections;
+    if (options?.forceCloseConnections) {
+      this.trackOpenConnections();
     }
     this.httpServer = new Server(this.opts);
   }
@@ -428,8 +440,20 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
     }
   }
 
+  private trackOpenConnections() {
+    // this.httpServer.on('connection', (socket: Duplex) => {
+    //   this.openConnections.add(socket);
+
+    //   socket.on('close', () => this.openConnections.delete(socket));
+    // });
+  }
+
   private closeOpenConnections() {
-    return new Promise(resolve => this.httpServer.close(resolve));
+    for (const socket of this.openConnections) {
+      socket.destroy();
+      this.openConnections.delete(socket);
+    }
+    return Promise.resolve(this.instance.close());
   }
 
   private isMiddlewareApplied(name: string): boolean {

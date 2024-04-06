@@ -1,6 +1,6 @@
 {
   "name": "@nnmt/platform-hyper-express",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Hyper-express Adapter for NestJS (@nnmt/platform-hyper-express)",
   "author": "Nguyen Nhat Minh Tu",
   "license": "MIT",
