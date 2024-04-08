@@ -29,7 +29,7 @@ import {
 } from 'body-parser';
 import * as bodyparser from 'body-parser';
 import cors from 'cors';
-import { Server, ServerConstructorOptions, Request, Response } from 'hyper-express';
+import { Server as HyperExpressServer , ServerConstructorOptions, Request, Response } from 'hyper-express';
 import LiveDirectory from 'live-directory';
 import { Duplex, pipeline } from 'stream';
 import { NestHyperExpressBodyParserOptions } from '../interfaces/nest-hyper-express-body-parser-options.interface';
@@ -49,6 +49,21 @@ type VersionedRoute = <
 /**
  * @publicApi
  */
+
+export class Server extends HyperExpressServer {
+
+  public get port(): number {
+    return this.port || 3000;
+  }
+
+  public once() {}
+  public removeListener() { }
+  public address() {
+    return this.address || '0.0.0.0';
+  }
+
+}
+
 export class HyperExpressAdapter extends AbstractHttpAdapter<
   Server,
   Request,
@@ -63,15 +78,12 @@ export class HyperExpressAdapter extends AbstractHttpAdapter<
     if (opts) {
       this.opts = opts;
       this.httpServer = this.instance = new Server(this.opts);
+      this.httpServer.once = function () {};
+      this.httpServer.removeListener = function () { };
+      // this.httpServer.address = function () {
+      //   return `0.0.0.0:${this.port}`;
+      // };
     }
-  }
-
-  port: number;
-  once() {}
-  removeListener() { }
-  
-  address() {
-    return `0.0.0.0:${this.port}`;
   }
 
   public reply(response: any, body: any, statusCode?: number) {
