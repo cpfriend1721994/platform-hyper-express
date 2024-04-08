@@ -67,9 +67,9 @@ bootstrap();
 
 
 ## Sample
-- Sample project are located in **`/sample`** directory.
-- Sample project help developers to install/integrate **`platform-hyper-express`** into their NestJS projects.
-- Sample project is not included in NPM package's source.
+- Sample projects are located in **`/sample`** directory.
+- Sample projects help developers to install/integrate **`platform-hyper-express`** into their NestJS projects.
+- Sample projects is not included in NPM package's source.
 
 
 
